@@ -1,4 +1,4 @@
-@RestResource(urlMapping='/lead/convert')
+@RestResource(urlMapping='/convert/lead')
 global with sharing class RestLeadConvert {            
     @HttpPost
     global static Map<String, String> doPost() {
@@ -8,8 +8,8 @@ global with sharing class RestLeadConvert {
         RestRequest req = RestContext.request;
         
         Map<String, String> requestParams = req.params;
-        String leadId = requestParams.get('leadId');
-        String accountId = requestParams.get('accountId');
+        String leadId = requestParams.get('Id');
+        String accountId = requestParams.get('AccountId');
         
         //get the status for converted Lead
         LeadStatus convertStatus = [SELECT Id, MasterLabel FROM LeadStatus WHERE IsConverted=true LIMIT 1];
