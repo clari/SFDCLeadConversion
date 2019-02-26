@@ -34,7 +34,7 @@ global with sharing class RestLeadConvert {
             system.debug('*****lcr.isSuccess()'+lcr.isSuccess());
         }
         catch(exception ex){
-            responseParams.put('error', ex);
+            responseParams.put('error', ex.getMessage());
         
             system.debug('***NOT CONVERTED**' + ex); 
         }
