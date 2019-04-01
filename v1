@@ -1,7 +1,7 @@
 @RestResource(urlMapping='/convert/lead')
 global with sharing class RestLeadConvert {            
     @HttpGet
-    global static Map<String, String> doPost() {
+    global static Map<String, String> startProcessing() {
         
         String responseMessage = 'fail';
         
@@ -35,7 +35,6 @@ global with sharing class RestLeadConvert {
         }
         catch(exception ex){
             responseParams.put('error', ex.getMessage());
-        
             system.debug('***NOT CONVERTED**' + ex); 
         }
         return responseParams;
