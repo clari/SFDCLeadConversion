@@ -1,6 +1,6 @@
 @RestResource(urlMapping='/convert/lead')
 global with sharing class RestLeadConvert {            
-    @HttpPost
+    @HttpGet
     global static Map<String, String> doPost() {
         
         String responseMessage = 'fail';
